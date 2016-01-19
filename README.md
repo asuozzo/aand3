@@ -1,4 +1,4 @@
-# D3 Presentation for the AAN Digital conference, January 21, 2015
+# D3 Presentation for AAN Digital conference, January 21, 2015
 ## Doing Interactive Dataviz Like the Cool Kids
 Yeah, I know what you're thinking: How cool can a Javascript library actually be?  
 Well, if you've seen an interactive chart at NPR, the New York Times or the Washington Post recently, there's a pretty good chance it was made using [D3](http://d3js.org/). It's all the rage these days!  
