@@ -33,19 +33,10 @@ footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
 }
-li {
-  color:#999
+ul.menu {
+  color:#999;
 }
 
 a.current {
   background-color:#8B4789;
-}
-
-ul.posts {
-    margin: 20px auto 40px;
-    font-size: 1.5em;
-}
-
-ul.posts li {
-    list-style: none;
 }
