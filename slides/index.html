@@ -116,6 +116,11 @@
 					</h2>
 				</section>
 
+				<section>
+					<h2>It's as easy as this!*</h2>
+					<img src="img/d3.png">
+					<p>*OK, so that's kind of an exaggeration.</p>
+				</section>
 
 				<section>
 					<h1>Thank you!</h1>
@@ -155,7 +160,7 @@
 		</script>
 		<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 		<script type="text/javascript">
-			var data = [91,45,34,23,18,12,5,2]
+			var data = [91,45,34,23,18,12]
 			var w = 400;
 			var h = 400;
 			var barPadding = 2;
@@ -169,6 +174,7 @@
 				.data(data)
 				.enter()
 				.append("rect")
+				.attr("class", "bar")
 				.attr("x", function(d) {
 					 return 0;
 				})
@@ -187,6 +193,29 @@
 					 return d * 4;
 				})
 
+				svg.selectAll("text")
+				   .data(data)
+				   .enter()
+				   .append("text")
+				   .text(function(d) {
+				   		return d;
+				   })
+				   .attr("text-anchor", "middle")
+					 .attr("x", function(d) {
+				   		return (d * 4) - 14
+						})
+				   .attr("y", function(d, i) {
+				   		return i * (w / data.length) + (w / data.length - barPadding) / 2;
+				   })
+				   .attr("font-family", "sans-serif")
+				   .attr("font-size", "17px")
+					 .attr("fill", "black")
+					 .attr("opacity", "0")
+					 .transition()
+					 .delay(2000)
+	 				.duration(500)
+					.attr("opacity", "1")
+					 ;
 
 		</script>
 
