@@ -33,7 +33,7 @@
 				<div id="playground">
 				</div>
         <script type="text/javascript">
-          var berniesHair=[2,2,4,5,5,6,7,8,8,9]
+          var berniehair=[1,2,1,2,3,2,3,5,7,9]
         </script>
 	  	</div>
 
@@ -57,9 +57,9 @@
 
 					<h3>Let's go to the bar</h3>
 
-          <pre><code>d3.select("#playground").selectAll("p").data(berniesHair).enter().append("p").text(function(d){return d;});</code></pre>
+          <pre><code>d3.select("#playground").selectAll("p").data(berniehair).enter().append("p").text(function(d){return d;});</code></pre>
 
-					<pre><code>d3.select("#playground").selectAll("div").data(berniesHair).enter().append("div").attr("class","chart")</code></pre>
+					<pre><code>d3.select("#playground").selectAll("div").data(berniehair).enter().append("div").attr("class","chart")</code></pre>
 
 					<pre><code>d3.selectAll(".chart").style("width","30px").style("height","10px").style("background-color","green")</code></pre>
 
