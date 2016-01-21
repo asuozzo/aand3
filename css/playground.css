@@ -33,9 +33,6 @@ body { margin: 20px; }
   display:inline-block;
 }
 
-circle {
-  fill:purple;
-}
 
 nav li,
 nav li a,
@@ -96,5 +93,5 @@ a:hover {
 @media screen and (min-width: 47.5em ) {
   .leftColumn { margin-right: 19.5em; }
 
-	.rightColumn { position: absolute; top: 0; right: 0; width: 18.75em; }
+	.rightColumn { position: absolute; top: 0; right: 0; width: 30.75em; }
 }
