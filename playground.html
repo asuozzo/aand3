@@ -56,19 +56,15 @@
 
 					<h3>Let's go to the bar</h3>
 
-          <pre><code>playground = d3.select("#playground")</code></pre>
+          <pre><code>d3.select("#playground").selectAll("p").data(dataset).enter().append("p").text(function(d){return d;});</code></pre>
 
-          <pre><code>playground.selectAll("p").data(dataset).enter().append("p").text(function(d){return d;});</code></pre>
+					<pre><code>d3.select("#playground").selectAll("div").data(dataset).enter().append("div").attr("class","chart")</code></pre>
 
-					<pre><code>playground.selectAll("div").data(dataset).enter().append("div").attr("class","chart")</code></pre>
+					<pre><code>d3.selectAll(".chart").style("width","20px").style("height","10px").style("background-color","green")</code></pre>
 
-					<pre><code>chart = d3.selectAll(".chart")</code></pre>
+					<pre><code>d3.selectAll(".chart").style("height", function(d){return d*30+"px"})</code></pre>
 
-					<pre><code>chart.style("width","20px").style("height","10px").style("background-color","green")</code></pre>
-
-					<pre><code>chart.style("height", function(d){return d*30+"px"})</code></pre>
-
-					<pre><code>chart.style("margin-right", "2px")</code></pre>
+					<pre><code>d3.selectAll(".chart").style("margin-right", "2px")</code></pre>
 					</div>
 
 	  		</div>

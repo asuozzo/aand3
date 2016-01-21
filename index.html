@@ -8,7 +8,7 @@
 	<body>
 		<nav>
     		<ul class="menu">
-        		<li>Home</li>
+        		<li><a href="index.html">Home</a></li>
 	        	<li><a href="http://asuozzo.github.io/aanslides/#/">Slides</a></li>
         		<li><a href="playground.html">Playground</a></li>
         		<li><a href="resources.html">Resources</a></li>
@@ -17,65 +17,14 @@
 		<div class="intro">
     		<div class="blurb">
         		<h1>Doing Interactive Dataviz Like the Cool Kids</h1>
-				<p>If you've seen an interactive chart at NPR, the New York Times or the Washington Post recently, there's a pretty good chance it was made using [D3](http://d3js.org/). It's all the rage these days!
+				<p>If you've seen an interactive chart at NPR, the New York Times or the Washington Post recently, there's a pretty good chance it was made using <a href="http://d3js.org/">D3</a>. It's all the rage these days!
 You can't learn D3 in 45 minutes, but you can build a simple chart — and get a feel for the library's power and flexibility. You'll come away from this workshop with insight into how D3 works and plenty of <a href="resources.html">resources</a> to keep you going. !</p>
 
 
 				</div><!-- /.blurb -->
 				<div id="viz">
 				</div>
-				<script type="text/javascript">
 
-				var w = 700;
-				var h = 600;
-				var padding = [ 20, 10, 50, 100 ];  //Top, right, bottom, left
-
-				var xScale = d3.scale.linear()
-									.range([ padding[3], w - padding[1] - padding[3] ]);
-
-				var yScale = d3.scale.linear()
-									.range([ padding[0], h - padding[2] ]);
-
-									var dataset = [
-					                  [ 1,  20 ],
-					                  [ 2,  1  ],
-					                  [ 3,  20 ],
-					                  [ 4,  1  ],
-					                  [ 5,  20 ],
-					                  [ 6,  1  ],
-					                  [ 7,  20 ],
-					                  [ 8,  1  ],
-					                  [ 9,  20 ],
-					                  [ 10, 1  ]
-					              ];
-
-					var line = d3.svg.line()
-						.x(function(d) {
-							return xScale(d.x1);
-						})
-						.y(function(d) {
-							return yScale(d.y1);
-						});
-
-
-						var svg = d3.select("viz")
-	            .append("svg")
-	            .attr("width", w)
-	            .attr("height", h);
-
-					// Get the data
-					d3.csv("data.csv", function(error, data) {
-					    data.forEach(function(d) {
-					        d.x1 = +d.x1;
-					        d.y1 = +d.y1;
-					    });
-
-						svg.append("path")
-								.attr("class", "line")
-								.attr("d", line(data))
-
-
-				</script>
 		</div><!-- /.container -->
 		<footer>
 				<ul class="menu">
