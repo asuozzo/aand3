@@ -30,8 +30,11 @@
 
 	  	<div class="leftColumn">
 	  		<h1>Welcome to the D3 Playground</h1>
+				<div id="playground">
 
-        <script type="javascript">
+					<svg></svg>
+				</div>
+        <script type="text/javascript">
           var dataset=[2,3,4,5]
         </script>
 	  	</div>
@@ -40,18 +43,39 @@
 	  		<h2>Fun With the Console</h2>
         <p>Open the console on your browser and paste in the following (but not before I tell you too!)</p>
         <div>
-          <pre><code>d3.select("body").style("background-color","COLOR")</code></pre>
+					<h3>Pick a color, any color</h3>
+					<pre><code>d3.select("body").style("background-color","COLOR")</code></pre>
 
           <pre><code>d3.select("h1").style("color","COLOR")</code></pre>
 
           <pre><code>d3.select("p").style("color","COLOR")</code></pre>
 
-          <pre><code>d3.select(".leftColumn").append("p").text("TEXT")</code></pre>
+					<pre><code>d3.select("p").style("font-family","serif")</code></pre>
 
-          <pre><code>playground = d3.select(".leftColumn")</code></pre>
+					<pre><code>d3.select("#playground").style("background-color","purple")</code></pre>
+
+          <pre><code>d3.select("#playground").append("p").text("TEXT")</code></pre>
+
+					<h3>Let's go to the bar</h3>
+
+          <pre><code>playground = d3.select("#playground")</code></pre>
 
           <pre><code>playground.selectAll("p").data(dataset).enter().append("p").text(function(d){return d;});</code></pre>
-        </div>
+
+					<pre><code>playground.selectAll("div").data(dataset).enter().append("div").attr("class","chart")</code></pre>
+
+					<pre><code>chart = d3.selectAll(".chart")</code></pre>
+
+					<pre><code>chart.style("width","20px").style("height","10px").style("background-color","green")</code></pre>
+
+					<pre><code>chart.style("height", function(d){return d*30+"px"})</code></pre>
+
+					<pre><code>chart.style("margin-right", "2px")</code></pre>
+
+					<h3>Going in circles</h3>
+
+					<pre><code>d3.select("svg").selectAll("circle").data(dataset).enter().append("circle").attr("cx",function(d){return d}).attr("cy", function(d){return d}).attr("r", function(d){return d})</code></pre>
+				</div>
 
 	  		</div>
 
