@@ -33,7 +33,7 @@
 				<div id="playground">
 				</div>
         <script type="text/javascript">
-          var dataset=[2,3,4,5]
+          var berniesHair=[2,2,4,5,5,6,7,8,8,9]
         </script>
 	  	</div>
 
@@ -42,7 +42,9 @@
         <p>Open the console on your browser and paste in the following (but not before I tell you too!)</p>
         <div>
 					<h3>Pick a color, any color</h3>
-					<pre><code>d3.select("body").style("background-color","COLOR")</code></pre>
+					<ol>
+						<li><pre><code>d3.select("body").style("background-color","COLOR")</code></pre></li>
+					</ol>
 
           <pre><code>d3.select("h1").style("color","COLOR")</code></pre>
 
@@ -56,15 +58,17 @@
 
 					<h3>Let's go to the bar</h3>
 
-          <pre><code>d3.select("#playground").selectAll("p").data(dataset).enter().append("p").text(function(d){return d;});</code></pre>
+          <pre><code>d3.select("#playground").selectAll("p").data(berniesHair).enter().append("p").text(function(d){return d;});</code></pre>
 
-					<pre><code>d3.select("#playground").selectAll("div").data(dataset).enter().append("div").attr("class","chart")</code></pre>
+					<pre><code>d3.select("#playground").selectAll("div").data(berniesHair).enter().append("div").attr("class","chart")</code></pre>
 
-					<pre><code>d3.selectAll(".chart").style("width","20px").style("height","10px").style("background-color","green")</code></pre>
+					<pre><code>d3.selectAll(".chart").style("width","30px").style("height","10px").style("background-color","green")</code></pre>
 
 					<pre><code>d3.selectAll(".chart").style("height", function(d){return d*30+"px"})</code></pre>
 
 					<pre><code>d3.selectAll(".chart").style("margin-right", "2px")</code></pre>
+
+					<pre><code>d3.select("#playground").append("p").text("Bernie Sanders' hair neatness, 2006-2016")</code></pre>
 					</div>
 
 	  		</div>
