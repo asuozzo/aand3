@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Resources | Doing Interactive Dataviz Like the Cool Kids</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<nav>
+    		<ul>
+        		<li><a href="index.html">Home</a></li>
+	        	<li><a href="slides/index.html">Slides</a></li>
+        		<li><a href="playground.html">Playground</a></li>
+        		<li>Resources</li>
+    		</ul>
+		</nav>
+		<div class="intro">
+    		<div class="blurb">
+        		<h1>D3 Links, Resources and More</h1>
+				<h2>Learning D3</h2>
+				<ul>
+					<li>Interactive Data Journalism for the Web - this is <i>the</i> book on D3, and it's totally free online.</li>
+					<li>Scott Murray's ease()-y as Math.PI tutorial</li>
+					<li>For that matter, any tutorial on Scott Murray's website</li>
+					<li>Mike Bostock's tutorials</li>
+					<li>Knight Center for Journalism in the Americas D3 course</li>
+					<li>D3 N00b book/website</li>
+				</ul>
+
+				 <h2>Keeping it up</h2>
+				 <p>
+				 	There's a strong D3 community out there. D3 creator Mike Bostock is very active on his own website, on Github, on message boards, and there are plenty of others out there who are working with D3 and writing about it.
+				 </p>
+				 <ul>
+				 	<li>D3 Slack</li>
+					<li>D3 newsletter</li>
+				 </ul>
+
+				 <h2>Examples/Inspiration</h2>
+				 <ul>
+				 	<li>d3.js</li>
+					<li>d3 message board</li>
+					<li></li>
+				 </ul>
+
+
+				</div><!-- /.blurb -->
+				<div id="viz">
+				</div>
+				<script type="text/javascript">
+
+				var w = 700;
+				var h = 600;
+				var padding = [ 20, 10, 50, 100 ];  //Top, right, bottom, left
+
+				var xScale = d3.scale.linear()
+									.range([ padding[3], w - padding[1] - padding[3] ]);
+
+				var yScale = d3.scale.linear()
+									.range([ padding[0], h - padding[2] ]);
+
+									var dataset = [
+					                  [ 1,  20 ],
+					                  [ 2,  1  ],
+					                  [ 3,  20 ],
+					                  [ 4,  1  ],
+					                  [ 5,  20 ],
+					                  [ 6,  1  ],
+					                  [ 7,  20 ],
+					                  [ 8,  1  ],
+					                  [ 9,  20 ],
+					                  [ 10, 1  ]
+					              ];
+
+					var line = d3.svg.line()
+						.x(function(d) {
+							return xScale(d.x1);
+						})
+						.y(function(d) {
+							return yScale(d.y1);
+						});
+
+
+						var svg = d3.select("viz")
+	            .append("svg")
+	            .attr("width", w)
+	            .attr("height", h);
+
+					// Get the data
+					d3.csv("data.csv", function(error, data) {
+					    data.forEach(function(d) {
+					        d.x1 = +d.x1;
+					        d.y1 = +d.y1;
+					    });
+
+						svg.append("path")
+								.attr("class", "line")
+								.attr("d", line(data))
+
+
+				</script>
+		</div><!-- /.container -->
+		<footer>
+				<ul>
+					<li>contact me:</li>
+						<li><a href="mailto:andrea@sevendaysvt.com">email</a></li>
+						<li><a href="https://github.com/asuozzo">github</a></li>
+        		<li><a href="http://twitter.com/asuozzo">twitter</a></li>
+			</ul>
+		</footer>
+	</body>
+</html>
