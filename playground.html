@@ -21,7 +21,7 @@
           <ul class="nav inline-items">
             <li><a href="index.html">Home</a></li>
 	        	<li><a href="slides/index.html">Slides</a></li>
-        		<li>Playground</li>
+        		<li<a href="playground.html">Playground</li>
         		<li><a href="resources.html">Resources</a></li>
          </ul>
       </nav>
@@ -31,8 +31,6 @@
 	  	<div class="leftColumn">
 	  		<h1>Welcome to the D3 Playground</h1>
 				<div id="playground">
-
-					<svg></svg>
 				</div>
         <script type="text/javascript">
           var dataset=[2,3,4,5]
@@ -71,11 +69,7 @@
 					<pre><code>chart.style("height", function(d){return d*30+"px"})</code></pre>
 
 					<pre><code>chart.style("margin-right", "2px")</code></pre>
-
-					<h3>Going in circles</h3>
-
-					<pre><code>d3.select("svg").selectAll("circle").data(dataset).enter().append("circle").attr("cx",function(d){return d}).attr("cy", function(d){return d}).attr("r", function(d){return d})</code></pre>
-				</div>
+					</div>
 
 	  		</div>
 
